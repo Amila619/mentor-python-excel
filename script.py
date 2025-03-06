@@ -32,12 +32,11 @@ for index, row in in_df.iterrows():
 
 
 # Assign Left Out Mentees
-for mentee in left_out_mentees:
+for mentee in left_out_mentees[:]:
     for k in mentors.keys():
         if len(mentors[k]) < 2:
             mentors[k].append(mentee)
             left_out_mentees.remove(mentee)
-        if len(left_out_mentees) == 0: 
             break
 
 # Generating mentees assigned to mentor file
